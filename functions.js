@@ -28,21 +28,30 @@ this.state = {
 2. Time of the day in React
 
 https://scrimba.com/scrim/c6G36SV?pl=p7P5Hd
+https://scrimba.com/scrim/cbyv9hb?pl=p7P5Hd
+
 
 function App() {
-  const date = new Date()
+  const date = new Date(2018, 6, 31, 15)
   const hours = date.getHours()
   let timeOfDay
+  const styles = {
+    fontSize: 30
+  }
   
   if (hours < 12) {
     timeOfDay = "morning"
+    styles.color = "#04756F"
   } else if (hours >= 12 && hours < 17) {
     timeOfDay = "afternoon"
+    styles.color = "#8914A3"
   } else {
     timeOfDay = "night"
+    styles.color = "#D90000"
   }
   
   return (
-    <h1>Good {timeOfDay}!</h1>
+    <h1 style={styles}>Good {timeOfDay}!</h1>
   )
 }
+
